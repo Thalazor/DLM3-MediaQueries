@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-container {
+    background-color: white;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+    grid-template-areas: 
+    "header"
+    "sort-bar"
+    "products"
+    "page-selector"
+    "footer";
+}
+
+header {
+    padding: 1rem;
+    grid-area: header;
+    background: rgb(156, 11, 18);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding-inline: 2rem;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+.brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: none;
+}
+
+.sort-section {
+    grid-area: sort-bar;
+    background-color: rgb(226, 226, 226);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sort-section label {
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+#sort-bar {
+    margin: 0.5rem;
+    width: 80%;
+    height: 2.5rem;
+    border: 1px solid rgb(226, 229, 233);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.products-container {
+    grid-area: products;
+    display: grid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card {
+    padding: 0.5rem;
+    margin: 1rem;
+    width: 85%;
+    border: 2px solid rgb(226, 229, 233);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    font-size: large;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card button {
+    background-color: rgb(156, 11, 18);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: white;
+}
+
+.product-page {
+    grid-area: page-selector;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-page a {
+    text-decoration: none;
+    color: rgb(156, 11, 18);
+    padding: 0.5rem;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+footer {
+    grid-area: footer;
+    background-color: rgb(105, 7, 12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.social-media {
+    padding: 1rem 0rem;
+}
+
+.social-media i {
+    color:white;
+}
+
+@media (min-width: 576px) {
+    .main-container {
+        grid-template-columns: 1fr 6fr;
+        grid-template-rows: 1fr 8fr 2fr;
+        grid-template-areas: 
+        "aside sort-section"
+        "aside products"
+        "footer page-selector";
+    }
+
+    header {
+        grid-area: aside;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    header a {
+        padding: 1rem;
+    }
+
+    header nav a {
+        width: 100%;
+    }
+
+    header nav a:hover {
+        background-color: rgb(105, 7, 12);
+    }
+
+    .bx-menu {
+        display: none;
+    }
+
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .sort-section {
+        grid-area: sort-section;
+    }
+
+    #sort-bar {
+        width: 95%;
+    }
+
+    .products-container {
+        grid-area: products;
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+        "p1 p2 p3 p4"
+        "p5 p6 p7 p8";
+    }
+
+    .p1 {grid-area: p1;}
+    .p2 {grid-area: p2;}
+    .p3 {grid-area: p3;}
+    .p4 {grid-area: p4;}
+    .p5 {grid-area: p5;}
+    .p6 {grid-area: p6;}
+    .p7 {grid-area: p7;}
+    .p8 {grid-area: p8;}
+
+    .product-page {
+        grid-area: page-selector;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: rgb(105, 7, 12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    footer p {
+        padding-bottom: 1rem;
+    }
+}
